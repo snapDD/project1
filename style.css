@@ -353,6 +353,12 @@ template {
 }
 
 
+button{
+  border:none;
+  outline: none;
+  background-color: transparent;
+}
+
 :root{
   --font-family-base : 'Inter' , sans-serif;
 
@@ -362,7 +368,9 @@ template {
   --font-size-h2: 50px;
   --font-size-h3: 20px;
   --font-size-button: 17px;
+  --font-size-document: 17px;
   --font-size-base: 16px;
+  --font-size-base-mobile: 6px;
   --font-size-menu: 30px;
 
   /*Colors*/
@@ -397,6 +405,17 @@ html {
   background-color:var(--page-backgruond-color) ;
   color:var (--page-text-color);
   line-height: 1.5;
+}
+
+
+@media screen and (max-widht : 576px){
+  html{
+    font-size: var ( --font-size-base-mobile);
+  }
+}
+
+body{
+  font-size: var(--font-size-button);
 }
 
 h1 {
@@ -437,4 +456,63 @@ a {
 
 .btn--secondary {
   border: 1px solid var(--white);
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* header */
+
+.header ul{
+
+}
+
+.header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.header{
+  list-style: none;
+  padding: 0 4rem;
+}
+
+a .header{
+  text-decoration: none;
+}
+
+@media screen and (min-width: 767px){
+  .header__burger{
+    display:none;
+  }
+}
+
+
+.header_nav ul{
+  padding: 0;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.header_nav li:not(:last-child){
+  margin-right: 4rem;
+}
+
+.header_action{
+  display: flex;
+  align-items: center;
+}
+
+
+.header_action btn {
+  display: flex;
+  align-items: center;
 }
